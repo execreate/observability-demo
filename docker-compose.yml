@@ -1,7 +1,7 @@
 name: observability-demo
 services:
 
-  app_one:
+  app:
     depends_on:
       postgres_db_one:
         condition: service_healthy
@@ -35,7 +35,7 @@ services:
       timeout: 3s
       retries: 10
 
-  app_two:
+  mirror:
     depends_on:
       postgres_db_two:
         condition: service_healthy

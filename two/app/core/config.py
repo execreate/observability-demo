@@ -20,7 +20,7 @@ class GlobalSettings(BaseSettings):
     DOCS_USERNAME: str = "docs_user"
     DOCS_PASSWORD: str = "simple_password"
 
-    TRUSTED_HOSTS: Set[str] = {"app", "localhost", "0.0.0.0", "127.0.0.1"}
+    TRUSTED_HOSTS: Set[str] = {"mirror", "app", "localhost", "0.0.0.0", "127.0.0.1"}
 
     ENVIRONMENT: EnvironmentEnum
     DEBUG: bool = False
