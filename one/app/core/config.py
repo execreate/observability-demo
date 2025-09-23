@@ -17,7 +17,7 @@ class EnvironmentEnum(str, Enum):
 class GlobalSettings(BaseSettings):
     PROJECT_NAME: str = "FastAPI Template"
 
-    MIRROR_API: str = "http://mirror:8080/api/v1"
+    MIRROR_API: str = "http://mirror:8080/v1"
 
     DOCS_USERNAME: str = "docs_user"
     DOCS_PASSWORD: str = "simple_password"
