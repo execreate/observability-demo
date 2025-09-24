@@ -21,6 +21,11 @@ up both apps with separate PostgreSQL databases.
    adjust other parameters like test duration and concurrency, then start the test.
 7. You should see the logs and traces coming in from the backend on ClickStack UI at http://localhost:8081.
 
+## Original README
+<details>
+
+<summary>Click here to see the rest of original README from the FastAPI Template</summary>
+
 ## Features overview
 
 1. [uv](https://docs.astral.sh/uv/) for dependency management.
@@ -97,3 +102,5 @@ To include instrumentation for your new dependencies, you can use the `opentelem
 ```shell
 uv add --group telemetry $(opentelemetry-bootstrap -a requirements)
 ```
+
+</details>
