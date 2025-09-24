@@ -1,18 +1,19 @@
 # Observability demo
 
-A demo setup for testing out [OpenTelemetry](https://opentelemetry.io) and 
+A demo setup for testing out [OpenTelemetry](https://opentelemetry.io) and
 [ClickStack](https://clickhouse.com/use-cases/observability) for distributed tracing and logging.
 
 ## What's new
 
 This project is completely the same as my [FastAPI Template](https://github.com/execreate/fastapi-template),
-except for some minor changes. This is a very silly setup with two identical apps where the [first one](./one) mirrors 
-all requests to the [second one](./two). The [Docker Compose file](./docker-compose.yml) has also been adapted to spin
-up both apps with separate PostgreSQL databases.
+except for some minor changes. This is a very silly (but okay for the demo) setup with two identical apps where
+the [first one](./one) mirrors all requests to the [second one](./two). The [Docker Compose file](./docker-compose.yml)
+has also been adapted to spin up both apps with separate PostgreSQL databases.
 
 ### How to run
 
-1. Copy-paste the content from `.env.example` to `.env` for both apps (the [first one](./one) and the [second one](./two).
+1. Copy-paste the content from `.env.example` to `.env` for both apps (the [first one](./one) and
+   the [second one](./two).
 2. Run `docker compose up -d clickstack`.
 3. Open http://localhost:8081, set up your ClickStack user and copy the ingestion API key into your `.env`.
 4. The run `docker compose up -d` to start the rest of the components.
@@ -22,6 +23,7 @@ up both apps with separate PostgreSQL databases.
 7. You should see the logs and traces coming in from the backend on ClickStack UI at http://localhost:8081.
 
 ## Original README
+
 <details>
 
 <summary>Click here to see the rest of original README from the FastAPI Template</summary>
