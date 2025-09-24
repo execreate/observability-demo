@@ -22,6 +22,10 @@ has also been adapted to spin up both apps with separate PostgreSQL databases.
    adjust other parameters like test duration and concurrency, then start the test.
 7. You should see the logs and traces coming in from the backend on ClickStack UI at http://localhost:8081.
 
+### How it looks
+
+![A screenshot to showcase distributed tracing and logging](screenshot.png)
+
 ## Original README
 
 <details>
