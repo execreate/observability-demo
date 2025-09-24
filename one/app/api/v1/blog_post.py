@@ -31,10 +31,6 @@ async def create_a_blog_post(
         logger.exception(
             "mirroring create_a_blog_post failed",
             exc_info=e,
-            extra={
-                "blog_post": blog_post,
-                "result": result,
-            },
         )
     return result
 
@@ -55,10 +51,6 @@ async def list_blog_posts(
         logger.exception(
             "mirroring list_blog_posts failed",
             exc_info=e,
-            extra={
-                "limit": pagination.limit,
-                "offset": pagination.offset,
-            },
         )
     crud = BlogPostCrud(db)
     return await crud.get_paginated_list(pagination.limit, pagination.offset)
@@ -86,9 +78,6 @@ async def retrieve_a_blog_post(
         logger.exception(
             "mirroring retrieve_a_blog_post failed",
             exc_info=e,
-            extra={
-                "post_id": post_id,
-            },
         )
     crud = BlogPostCrud(db)
     return await crud.get_by_id(post_id)
@@ -121,10 +110,6 @@ async def update_a_blog_post(
         logger.exception(
             "mirroring update_a_blog_post failed",
             exc_info=e,
-            extra={
-                "post_id": post_id,
-                "body": blog_post.model_dump(),
-            },
         )
     return result
 
@@ -154,8 +139,5 @@ async def delete_a_blog_post(
         logger.exception(
             "mirroring delete_a_blog_post failed",
             exc_info=e,
-            extra={
-                "post_id": post_id,
-            },
         )
     return Response(status_code=status.HTTP_204_NO_CONTENT)
