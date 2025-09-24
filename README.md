@@ -1,6 +1,25 @@
-# FastAPI template
+# Observability demo
 
-A nice starting point for your [FastAPI](https://fastapi.tiangolo.com) application.
+A demo setup for testing out [OpenTelemetry](https://opentelemetry.io) and 
+[ClickStack](https://clickhouse.com/use-cases/observability) for distributed tracing and logging.
+
+## What's new
+
+This project is completely the same as my [FastAPI Template](https://github.com/execreate/fastapi-template),
+except for some minor changes. This is a very silly setup with two identical apps where the [first one](./one) mirrors 
+all requests to the [second one](./two). The [Docker Compose file](./docker-compose.yml) has also been adapted to spin
+up both apps with separate PostgreSQL databases.
+
+### How to run
+
+1. Copy-paste the content from `.env.example` to `.env` for both apps (the [first one](./one) and the [second one](./two).
+2. Run `docker compose up -d clickstack`.
+3. Open http://localhost:8081, set up your ClickStack user and copy the ingestion API key into your `.env`.
+4. The run `docker compose up -d` to start the rest of the components.
+5. Run [Locust](https://locust.io) for load tests.
+6. Open http://localhost:8089 to access Locust UI. Set the host parameter to the first app URL `http://localhost:8091`,
+   adjust other parameters like test duration and concurrency, then start the test.
+7. You should see the logs and traces coming in from the backend on ClickStack UI at http://localhost:8081.
 
 ## Features overview
 
@@ -47,7 +66,7 @@ A nice starting point for your [FastAPI](https://fastapi.tiangolo.com) applicati
 4. The run `docker compose up` to start the database and the app
 5. Run [Locust](https://locust.io) for load tests (another reminder that the `locustfile.py` was vibe-coded, feel free
    to adapt it)
-6. Open http://localhost:8009 to access Locust UI. Set the host parameter to the backend URL `http://localhost:8080`,
+6. Open http://localhost:8089 to access Locust UI. Set the host parameter to the backend URL `http://localhost:8080`,
    adjust other parameters and start the test
 7. You should see the logs and traces coming in from the backend on ClickStack UI at http://localhost:8081
 
