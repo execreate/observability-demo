@@ -13,7 +13,7 @@ has also been adapted to spin up both apps with separate PostgreSQL databases.
 ### How to run
 
 1. Copy-paste the content from `.env.example` to `.env` for both apps (the [first one](./one) and
-   the [second one](./two).
+   the [second one](./two)).
 2. Run `docker compose up -d clickstack`.
 3. Open http://localhost:8081, set up your ClickStack user and copy the ingestion API key into your `.env`.
 4. The run `docker compose up -d` to start the rest of the components.
